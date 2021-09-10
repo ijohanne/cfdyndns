@@ -169,7 +169,7 @@ fn main() {
                 zone_id, record_id
             );
             let record_update_body = format!(
-                r#"{{"name": "{}", "content": "{}", "type": "{}", "proxied": true}}"#,
+                r#"{{"name": "{}", "content": "{}", "type": "{}", "proxied": false}}"#,
                 record_name, current_ip, record_type
             );
             cloudflare_api(&client, &*record_url, Some(record_update_body.to_string())).unwrap();
